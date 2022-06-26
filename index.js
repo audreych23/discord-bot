@@ -3,12 +3,11 @@ const fs = require('node:fs');
 // Helps constructs path to access files and directories
 const path = require('node:path');
 // Require the necessary discord.js classes
-const { Client, Collection } = require('discord.js');
-
+const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
 
 // Create a new client instance
-const client = new Client({ intents: 32767 });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 // attach .commands propertyto the client instance so it can access commands in other files
 client.commands = new Collection();
