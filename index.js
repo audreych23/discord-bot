@@ -23,11 +23,13 @@ for (const file of commandFiles) {
   client.commands.set(command.data.name, command);
 }
 // When the client is ready, run this code (only once)
-client.once('ready', () => {
-  console.log('Ready!');
+client.once('ready', c => {
+  console.log(`Ready! Logged in as ${c.user.tag}`);
+  client.user.setActivity('Coding in the dungeon');
 });
 
 client.on('interactionCreate', async interaction => {
+  console.log(`${interaction.user.tag} in #${interaction.channel.name} triggered an interaction.`);
   if (!interaction.isCommand()) return;
 
   const command = client.commands.get(interaction.commandName);
@@ -36,7 +38,8 @@ client.on('interactionCreate', async interaction => {
 
   try {
     await command.execute(interaction);
-  } catch (error) {
+  }
+  catch (error) {
     console.error(error);
     await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
   }
