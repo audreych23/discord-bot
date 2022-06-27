@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const { Database } = require('../../config.json');
-
 module.exports = {
   name: 'ready',
   once: true,
