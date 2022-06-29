@@ -8,7 +8,7 @@ module.exports = {
    */
   execute(client) {
     console.log('The client is now ready');
-    client.user.setActivity('Coding in the dungeon');
+    client.user.setActivity('Coding', 'in the dungeon');
 
     if (!Database) return;
     mongoose.connect(Database, {
