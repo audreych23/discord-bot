@@ -25,3 +25,5 @@ module.exports = {
     Welcomer.send({ embeds: [Welcome] });
   },
 };
+
+/* Notes : setAuthor and setDescription is deprecated */
