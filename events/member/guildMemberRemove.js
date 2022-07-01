@@ -14,12 +14,12 @@ module.exports = {
 
     const Log = new MessageEmbed()
       .setColor('RED')
-      .setAuthor(user.tag, user.avatarURL({ dynamic: true, size: 512 }))
+      .setAuthor({ name: user.tag, iconURL: user.avatarURL({ dynamic: true, size: 512 }) })
       .setThumbnail(user.avatarURL({ dynamic: true, size: 512 }))
       .setDescription(`
         ${member} has left the community\n
         Joined: <t:${parseInt(member.joinedTimestamp / 1000)}:R>\nLatest Member Count: **${guild.memberCount}**`)
-      .setFooter(`ID: ${user.id}`);
+      .setFooter({ text: `ID: ${user.id}` });
 
     Logger.send({ embeds: [Log] });
   },
