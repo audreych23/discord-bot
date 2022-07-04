@@ -11,6 +11,9 @@ const client = new Client({ intents: 32767 });
 
 // attach .commands property to the client instance so it can access commands in other files
 client.commands = new Collection();
+
+require('../systems/giveaway_sys')(client);
+
 ['events', 'commands'].forEach(handler => {
   require(`./handlers/${handler}`)(client, PG, Ascii);
 });
