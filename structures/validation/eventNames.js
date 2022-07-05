@@ -67,5 +67,7 @@ module.exports = {
     'voiceStateUpdate',
     'warn',
     'webhookUpdate',
+    /* added */
+    'erelaEvents',
   ],
 };

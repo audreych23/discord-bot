@@ -19,5 +19,6 @@ module.exports = {
     }).catch((err) => {
       console.log(err);
     });
+    client.manager.init(client.user.id);
   },
 };
